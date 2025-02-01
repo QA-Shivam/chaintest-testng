@@ -9,7 +9,6 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
-@Listeners({ChainTestListener.class})
 public class BaseTest extends PageObjectsFactory {
 
     // ThreadLocal to make WebDriver thread-safe

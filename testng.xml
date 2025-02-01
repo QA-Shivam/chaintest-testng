@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener"/>
+    </listeners>
     <test name="Test Thread 1">
         <parameter name="browser" value="chrome"/>
         <parameter name="url" value="https://www.godaddy.com/"/>
@@ -9,6 +12,7 @@
                 <methods>
                     <include name="test1"/>
                     <include name="test2"/>
+                    <include name="test3"/>
                 </methods>
             </class>
         </classes>
