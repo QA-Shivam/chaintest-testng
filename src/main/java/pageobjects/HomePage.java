@@ -10,10 +10,7 @@ import java.time.Duration;
 
 public class HomePage extends BaseTest {
     private WebDriver driver;
-
-    // Example web elements
     private By domainMenu = By.xpath("//li[@data-track-name='domain_names2']");
-    private By loginButton = By.id("loginButton");
 
     // Constructor
     public HomePage(WebDriver driver) {
