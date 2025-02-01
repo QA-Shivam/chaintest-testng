@@ -1,5 +1,6 @@
 package base;
 
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -8,8 +9,8 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
-
-public class BaseTest {
+@Listeners({ChainTestListener.class})
+public class BaseTest extends PageObjectsFactory {
 
     // ThreadLocal to make WebDriver thread-safe
     public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
@@ -48,6 +49,8 @@ public class BaseTest {
             driverInstance.manage().window().maximize();
             driverInstance.get(url);
             driver.set(driverInstance);
+            // Initialize all page objects
+            initPageObjects(driverInstance);
         } else {
             System.out.println("Error: WebDriver could not be initialized.");
         }

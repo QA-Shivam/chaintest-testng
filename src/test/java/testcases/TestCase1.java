@@ -6,23 +6,32 @@ import org.testng.annotations.Test;
 
 public class TestCase1 extends BaseTest {
 
-    @Test
+    @Test(description = "Test Case - Open Godaddy.com and Print its Page title.")
     public void test1() {
-        String pagetilte=driver.get().getTitle();
+        String pagetilte= homePage.getPageTitle();
         String url=driver.get().getCurrentUrl();
-        Assert.assertEquals(pagetilte,"Domain Names, Websites, Hosting & Online Marketing Tools - GoDaddy IN","Page title is not correct");
         System.out.println("Page title is: "+pagetilte);
-        Assert.assertEquals(url,"https://in.godaddy.com/","URL is not correct");
         System.out.println("URL is: "+url);
     }
 
-    @Test
+    @Test(description = "Test Case - Open Godaddy.com and Validate Page Title")
     public void test2() {
-        System.out.println("Test 2");
+        String pagetilte= homePage.getPageTitle();
+        String url=driver.get().getCurrentUrl();
+        Assert.assertEquals(pagetilte,"Domain Names, Websites, Hosting & Online Marketing Tools - GoDaddy IN","Page title is not correct");
+        System.out.println("Page title is: "+pagetilte);
+        Assert.assertEquals(url,"https://www.godaddy.com/en-in","URL is not Matched");
+        System.out.println("URL is: "+url);
+        String pageSource=driver.get().getPageSource();
+        System.out.println("Page Source is: "+pageSource);
+        Assert.assertTrue(pageSource.contains("GoDaddy"), "Page Source does not contains GoDaddy.com");
     }
 
-    @Test
+    @Test(description = "Automate GoDaddy.com website menu links")
     public void test3() {
-        System.out.println("Test 3");
+        String url=driver.get().getCurrentUrl();
+        System.out.println("Navigated to : "+url);
+        homePage.clickDomainMenu();
+
     }
 }
