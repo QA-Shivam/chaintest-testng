@@ -24,7 +24,6 @@ Step 2: Add Dependencies to pom.xml
 You need to include the necessary Maven dependencies for Chaintest and related libraries in your pom.xml:
 
 <dependencies>
-    <!-- Chaintest TestNG Dependency -->
     <dependency>
         <groupId>com.aventstack</groupId>
         <artifactId>chaintest-testng</artifactId>
