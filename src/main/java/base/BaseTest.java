@@ -1,14 +1,19 @@
 package base;
 
 import com.aventstack.chaintest.plugins.ChainTestListener;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
+
+//@Listeners(ChainTestListener.class)
 public class BaseTest extends PageObjectsFactory {
 
     // ThreadLocal to make WebDriver thread-safe
@@ -19,8 +24,14 @@ public class BaseTest extends PageObjectsFactory {
     }
 
     @AfterMethod
-    public void afterMethod() {
-
+    public void afterMethod(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE) {
+            ChainTestListener.embed(takess(),"image/png");
+        } else if (result.getStatus() == ITestResult.SUCCESS) {
+            ChainTestListener.embed(takess(),"image/png");
+        } else if (result.getStatus() == ITestResult.SKIP) {
+            ChainTestListener.embed(takess(),"image/png");
+        }
     }
 
     @Parameters({"browser", "url"})
@@ -64,5 +75,9 @@ public class BaseTest extends PageObjectsFactory {
         }
         // Remove the WebDriver instance from ThreadLocal to ensure thread safety
         driver.remove();
+    }
+    public byte[] takess() {
+        TakesScreenshot screenshotDriver = (TakesScreenshot) driver.get();
+        return  screenshotDriver.getScreenshotAs(OutputType.BYTES);
     }
 }
