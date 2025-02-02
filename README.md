@@ -22,7 +22,6 @@ Note: Docker is only required for ChainLP as it hosts the report generation serv
 
 Step 2: Add Dependencies to pom.xml
 You need to include the necessary Maven dependencies for Chaintest and related libraries in your pom.xml:
-
 <dependencies>
     <dependency>
         <groupId>com.aventstack</groupId>
@@ -31,7 +30,6 @@ You need to include the necessary Maven dependencies for Chaintest and related l
     </dependency>
 </dependencies>
 
-
 Step 3: Add chaintest.properties File
 You need to configure the Chaintest settings by adding the chaintest.properties file.
 Create a chaintest.properties file inside the src/test/resources folder of your project.
@@ -39,7 +37,6 @@ Configure the file by enabling generators and setting project and email configur
 
 Enable report generators
 generator=true
-
 Project name configuration
 project.name=YourProjectName
 
@@ -67,5 +64,4 @@ Once the setup is complete, you can now run your tests using Maven and TestNG:
 
 mvn clean test
 After running the tests, Chaintest will generate detailed reports. If Docker is used to run ChainLP Server, it will be accessible on the configured server address (http://localhost:80).
-
 You can find the report in the ChainLP dashboard if running in Docker or in the generated files in your project directory for static reports.
