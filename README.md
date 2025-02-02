@@ -31,6 +31,7 @@ You need to include the necessary Maven dependencies for Chaintest and related l
     </dependency>
 </dependencies>
 
+
 Step 3: Add chaintest.properties File
 You need to configure the Chaintest settings by adding the chaintest.properties file.
 Create a chaintest.properties file inside the src/test/resources folder of your project.
@@ -40,7 +41,7 @@ Enable report generators
 generator=true
 
 Project name configuration
-project.name=TestNG Selenium Integration
+project.name=YourProjectName
 
 Email configuration for report sharing (set to true to enable email notifications)
 email.generator=true
