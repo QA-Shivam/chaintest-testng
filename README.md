@@ -1,4 +1,4 @@
-Chaintest Integration with TestNG
+Chaintest Integration with TestNG:
 This project demonstrates the integration of Chaintest Reports with TestNG for generating detailed test execution reports. Chaintest is a powerful reporting tool that allows you to capture and analyze your Selenium test results in a comprehensive way.
 
 Prerequisites
