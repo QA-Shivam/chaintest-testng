@@ -11,7 +11,7 @@ TestNG: Automatically included via Maven dependencies
 
 # Integration Steps
 Step 1: Set Up ChainLP Server Using Docker
-ChainLP Server is a required component to generate the Chaintest reports. It needs to be run using Docker.
+ChainLP Server is a framework component providing historical analytics. It needs to be run using Docker.
 
 Clone the Chaintest repository from GitHub:
 git clone: https://github.com/QA-Shivam/chaintest-testng.git
