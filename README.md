@@ -1,7 +1,7 @@
-Chaintest Integration with TestNG:
+# Chaintest Integration with TestNG
 This project demonstrates the integration of Chaintest Reports with TestNG for generating detailed test execution reports. Chaintest is a powerful reporting tool that allows you to capture and analyze your Selenium test results in a comprehensive way.
 
-Prerequisites
+# Prerequisites
 Before you begin, ensure you have the following installed:
 
 Java (JDK 11 or above): Download JDK
@@ -9,7 +9,7 @@ Apache Maven: Download Maven
 Docker (for running ChainLP Server): Download Docker
 TestNG: Automatically included via Maven dependencies
 
-Integration Steps
+# Integration Steps
 Step 1: Set Up ChainLP Server Using Docker
 ChainLP Server is a required component to generate the Chaintest reports. It needs to be run using Docker.
 
@@ -37,13 +37,13 @@ You need to configure the Chaintest settings by adding the chaintest.properties 
 Create a chaintest.properties file inside the src/test/resources folder of your project.
 Configure the file by enabling generators and setting project and email configurations to true:
 
-# Enable report generators
+Enable report generators
 generator=true
 
-# Project name configuration
+Project name configuration
 project.name=TestNG Selenium Integration
 
-# Email configuration for report sharing (set to true to enable email notifications)
+Email configuration for report sharing (set to true to enable email notifications)
 email.generator=true
 email.recipient=youremail@example.com
 email.sender=sender@example.com
